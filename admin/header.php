@@ -55,12 +55,26 @@
       
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="active treeview">
-          <a href="#">
+        <li class="treeview">
+          <a href="dashboard.php">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
+          </a>
+          
+        </li>
+        <li class="treeview">
+          <a href="view_users.php">
+            <i class="fa fa-dashboard"></i> <span>View Users</span>
+            
+          </a>
+          
+        </li>
+        <li class="treeview">
+          <a href="change_password.php">
+            <i class="fa fa-dashboard"></i> <span>Change Password</span>
+            
           </a>
           
         </li>
