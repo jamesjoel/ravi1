@@ -16,12 +16,21 @@ if(mysqli_num_rows($result)==1)
 	// print_r($data);
 	if($data['password']==sha1($p))
 	{
+		if($data['status']==1)
+		{
+
 		$_SESSION['name']=$data['full_name'];
 		$_SESSION['id']=$data['id'];
 		$_SESSION['is_user_logged_in']=true;
 
 		
 		header("location:my_account.php");
+		}
+		else
+		{
+			$_SESSION['msg']="You Are Deactive Now pls contact our team.... !";
+			header('location:login.php');
+		}
 	}
 	else
 	{

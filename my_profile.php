@@ -48,6 +48,8 @@ $data = mysqli_fetch_assoc($result);
 						<td><?php echo $data['address'];?></td>
 					</tr>
 				</table>
+				<Br />
+				<a href="edit_profile.php" class="btn btn-dark">Edit</a>
 				
 			</div>
 		</div>

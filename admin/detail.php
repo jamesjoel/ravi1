@@ -5,8 +5,12 @@ if(! isset($_SESSION['is_admin_logged_in']))
 {
   header("location:index.php");
 }
-$query ="SELECT * FROM user";
+$a = $_GET['uid'];
+
+
+$query ="SELECT * FROM user WHERE id = $a";
 $result=mysqli_query($con, $query);
+$data = mysqli_fetch_assoc($result);
 
 
 ?>
@@ -36,27 +40,27 @@ $result=mysqli_query($con, $query);
           <table class="table table-borderd table-hover table-info">
             <tr>
               <td>Full Name</td>
-              <td>dfgsdg</td>
+              <td><?php echo $data['full_name']; ?></td>
             </tr>
             <tr>
               <td>Username</td>
-              <td>dfgsdg</td>
+              <td><?php echo $data['username']; ?></td>
             </tr>
             <tr>
               <td>Address</td>
-              <td>dfgsdg</td>
+              <td><?php echo $data['address']; ?></td>
             </tr>
             <tr>
               <td>City</td>
-              <td>dfgsdg</td>
+              <td><?php echo $data['city']; ?></td>
             </tr>
             <tr>
               <td>Gender</td>
-              <td>dfgsdg</td>
+              <td><?php echo $data['gender']; ?></td>
             </tr>
             <tr>
               <td>Contact</td>
-              <td>dfgsdg</td>
+              <td><?php echo $data['contact']; ?></td>
             </tr>
 
           </table>

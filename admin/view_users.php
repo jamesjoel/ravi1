@@ -41,17 +41,30 @@ $result=mysqli_query($con, $query);
               <th>Contact</th>
               <th>View Detail</th>
               <th>Status</th>
+              <th>Change</th>
             </tr>
             <?php
             while($data=mysqli_fetch_assoc($result))
-            { ?>
+            { 
+              if($data['status']==1)
+              {
+                $x = "Acitve";
+              }
+              else
+              {
+                $x = "Deactive";
+              }
+
+
+              ?>
               <tr>
                 <td><?php echo $data['id'];?></td>
                 <td><?php echo $data['full_name'];?></td>
                 <Td><?php echo $data['username'];?></Td>
                 <td><?php echo $data['contact'];?></td>
-                <td><a href="detail.php" class="btn btn-info">View</a></td>
-                <td><a href="#" class="btn btn-warning">Active</a></td>
+                <td><a href="detail.php?uid=<?php echo $data['id']; ?>" class="btn btn-info">View</a></td>
+                <td><?php echo $x; ?></td>
+                <td><a href="change_status.php?uid=<?php echo $data['id']; ?>" class="btn btn-warning">Change</a></td>
               </tr>
             <?php
             }
