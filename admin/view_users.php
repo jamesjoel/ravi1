@@ -42,6 +42,7 @@ $result=mysqli_query($con, $query);
               <th>View Detail</th>
               <th>Status</th>
               <th>Change</th>
+              <th>Delete</th>
             </tr>
             <?php
             while($data=mysqli_fetch_assoc($result))
@@ -65,6 +66,8 @@ $result=mysqli_query($con, $query);
                 <td><a href="detail.php?uid=<?php echo $data['id']; ?>" class="btn btn-info">View</a></td>
                 <td><?php echo $x; ?></td>
                 <td><a href="change_status.php?uid=<?php echo $data['id']; ?>" class="btn btn-warning">Change</a></td>
+
+                <td><a href="delete.php?uid=<?php echo $data['id']; ?>" class="btn btn-danger">Delete</a></td>
               </tr>
             <?php
             }
