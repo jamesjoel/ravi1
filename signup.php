@@ -1,4 +1,5 @@
 <?php
+include("config.php");
 include("header.php");
 ?>
 <div style="min-height: 600px;">
@@ -9,7 +10,7 @@ include("header.php");
 						<p class="text-center text-ligh mt-4">
 							for new user login here...
 						</p>
-						<form action="save.php" method="post">
+						<form action="save.php" method="post" enctype="multipart/form-data">
 							
 						<div class="card mt-4">
 							<div class="card-header">
@@ -32,6 +33,19 @@ include("header.php");
 								<div class="form-group">
 									<label>Re-Password</label>
 									<input type="password" class="form-control" name="re_pass">
+								</div>
+								<div class="form-group">
+									<label>Select Porifl Pic</label>
+									<input type="file" name="image" />
+									<p class="text-center text-danger">
+										<?php
+										if(isset($_SESSION['msg']))
+										{
+											echo $_SESSION['msg'];
+											unset($_SESSION['msg']);
+										}
+										?>
+									</p>
 								</div>
 								<div class="form-group">
 									<label>Contact</label>

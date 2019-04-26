@@ -72,6 +72,13 @@
           
         </li>
         <li class="treeview">
+          <a href="view_users.php">
+            <i class="fa fa-dashboard"></i> <span>Logo</span>
+            
+          </a>
+          
+        </li>
+        <li class="treeview">
           <a href="change_password.php">
             <i class="fa fa-dashboard"></i> <span>Change Password</span>
             

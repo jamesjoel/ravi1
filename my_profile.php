@@ -32,6 +32,10 @@ $data = mysqli_fetch_assoc($result);
 						<td><?php echo $data['username'];?></td>
 					</tr>
 					<tr>
+						<td>Profile</td>
+						<td><img src="upload/<?php echo $data['image'] ?>" height="100" width="100"></td>
+					</tr>
+					<tr>
 						<td>Contact</td>
 						<td><?php echo $data['contact'];?></td>
 					</tr>
